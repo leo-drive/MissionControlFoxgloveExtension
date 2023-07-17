@@ -1,0 +1,731 @@
+{
+    "SideBar": {
+        "Home": {
+            "en": "Home",
+            "de": "Startseite",
+            "fr": "Accueil",
+            "jp": "ホーム",
+            "tr": "Ana Sayfa",
+            "ru": "Главная"
+        },
+        "Control": {
+            "en": "Control",
+            "de": "Steuerung",
+            "fr": "Contrôle",
+            "jp": "コントロール",
+            "tr": "Kontrol",
+            "ru": "Управление"
+        },
+        "Observation": {
+            "en": "Observation",
+            "de": "Beobachtung",
+            "fr": "Observation",
+            "jp": "観測",
+            "tr": "Gözlem",
+            "ru": "Наблюдение"
+        },
+        "Map": {
+            "en": "Map",
+            "de": "Karte",
+            "fr": "Carte",
+            "jp": "地図",
+            "tr": "Harita",
+            "ru": "Карта"
+        },
+        "3D Environment": {
+            "en": "3D Environment",
+            "de": "3D Umgebung",
+            "fr": "Environnement 3D",
+            "jp": "3D環境",
+            "tr": "3D Ortam",
+            "ru": "3D среда"
+        },
+        "French": {
+            "en": "French",
+            "de": "Französisch",
+            "fr": "Français",
+            "jp": "フランス語",
+            "tr": "Fransızca",
+            "ru": "Французский"
+        },
+        "English": {
+            "en": "English",
+            "de": "Englisch",
+            "fr": "Anglais",
+            "jp": "英語",
+            "tr": "İngilizce",
+            "ru": "Английский"
+        },
+        "Turkish": {
+            "en": "Turkish",
+            "de": "Türkisch",
+            "fr": "Turc",
+            "jp": "トルコ語",
+            "tr": "Türkçe",
+            "ru": "Турецкий"
+        },
+        "Russian": {
+            "en": "Russian",
+            "de": "Russisch",
+            "fr": "Russe",
+            "jp": "ロシア語",
+            "tr": "Rusça",
+            "ru": "Русский"
+        },
+        "Japanese": {
+            "en": "Japanese",
+            "de": "Japanisch",
+            "fr": "Japonais",
+            "jp": "日本語",
+            "tr": "Japonca",
+            "ru": "Японский"
+        },
+        "German": {
+            "en": "German",
+            "de": "Deutsch",
+            "fr": "Allemand",
+            "jp": "ドイツ語",
+            "tr": "Almanca",
+            "ru": "Немецкий"
+        }
+    },
+    "Buttons": {
+        "freelook": {
+            "en": "Free look",
+            "de": "Freie Sicht",
+            "fr": "Vue libre",
+            "jp": "自由視点",
+            "tr": "Serbest bakış",
+            "ru": "Свободный обзор"
+        },
+        "carFollow": {
+            "en": "Car follow",
+            "de": "Fahrzeug folgen",
+            "fr": "Suivre la voiture",
+            "jp": "車を追う",
+            "tr": "Araba takip",
+            "ru": "Следовать за машиной"
+        },
+        "engage": {
+            "en": "Engage",
+            "de": "Einsteigen",
+            "fr": "Engager",
+            "jp": "乗り込む",
+            "tr": "Başlat",
+            "ru": "Включить"
+        },
+        "disengage": {
+            "en": "Disengage",
+            "de": "Aussteigen",
+            "fr": "Désengager",
+            "jp": "降りる",
+            "tr": "Bitir",
+            "ru": "Выключить"
+        },
+        "findCar": {
+            "en": "Find car",
+            "de": "Fahrzeug finden",
+            "fr": "Trouver la voiture",
+            "jp": "車を探す",
+            "tr": "Araba bul",
+            "ru": "Найти машину"
+        },
+        "Gear": {
+            "en": "Gear",
+            "de": "Getriebe",
+            "fr": "Vitesse",
+            "jp": "ギア",
+            "tr": "Vites",
+            "ru": "Передача"
+        },
+        "set Limit": {
+            "en": "Set limit",
+            "de": "Grenze setzen",
+            "fr": "Définir la limite",
+            "jp": "制限を設定",
+            "tr": "Sınırı ayarla",
+            "ru": "Установить лимит"
+        },
+        "send": {
+            "en": "Send",
+            "de": "Senden",
+            "fr": "Envoyer",
+            "jp": "送信",
+            "tr": "Gönder",
+            "ru": "Отправить"
+        },
+        "Initializing": {
+            "en": "Initializing",
+            "de": "Initialisierung",
+            "fr": "Initialisation",
+            "jp": "初期化中",
+            "tr": "Başlatılıyor",
+            "ru": "Инициализация"
+        },
+        "WaitingForGoal": {
+            "en": "Waiting for goal",
+            "de": "Warte auf Ziel",
+            "fr": "En attente de l'objectif",
+            "jp": "ゴールを待っています",
+            "tr": "Hedef beklen",
+            "ru": "Ожидание цели"
+        },
+        "Planning": {
+            "en": "Planning",
+            "de": "Planung",
+            "fr": "Planification",
+            "jp": "計画中",
+            "tr": "Planlanıyor",
+            "ru": "Планирование"
+        },
+        "ReadyForEngage": {
+            "en": "Ready for engage",
+            "de": "Bereit zum Einsteigen",
+            "fr": "Prêt à engager",
+            "jp": "乗り込み準備完了",
+            "tr": "Başlatma için hazır",
+            "ru": "Готов к включению"
+        },
+        "Driving": {
+            "en": "Driving",
+            "de": "Fahren",
+            "fr": "Conduite",
+            "jp": "走行中",
+            "tr": "Sürüş",
+            "ru": "Вождение"
+        },
+        "ArrivedGoal": {
+            "en": "Arrived goal",
+            "de": "Ziel erreicht",
+            "fr": "Objectif atteint",
+            "jp": "ゴールに到着",
+            "tr": "Hedefe ulaşı",
+            "ru": "Достигнута цель"
+        },
+        "Unknown": {
+            "en": "Unknown",
+            "de": "Unbekannt",
+            "fr": "Inconnu",
+            "jp": "不明",
+            "tr": "Bilinmiyor",
+            "ru": "Неизвестно"
+        },
+        "Neutral": {
+            "en": "Neutral",
+            "de": "Neutral",
+            "fr": "Neutre",
+            "jp": "ネュラル",
+            "tr": "Nötr",
+            "ru": "Нейтральная"
+        },
+        "Reverse": {
+            "en": "Reverse",
+            "de": "Rückwärts",
+            "fr": "Arrière",
+            "jp": "リバース",
+            "tr": "Geri",
+            "ru": "Реверс"
+        },
+        "Drive": {
+            "en": "Drive",
+            "de": "Vorwärts",
+            "fr": "Avant",
+            "jp": "ドライブ",
+            "tr": "İleri",
+            "ru": "Прямая"
+        },
+        "Low": {
+            "en": "Low",
+            "de": "Niedrig",
+            "fr": "Bas",
+            "jp": "ロー",
+            "tr": "Düşük",
+            "ru": "Низкая"
+        },
+        "Parking": {
+            "en": "Parking",
+            "de": "Parken",
+            "fr": "Parking",
+            "jp": "パーキング",
+            "tr": "Park",
+            "ru": "Парковка"
+        },
+        "MissionState": {
+            "en": "Mission state",
+            "de": "Mission Zustand",
+            "fr": "État de la mission",
+            "jp": "ミッション状態",
+            "tr": "Görev durumu",
+            "ru": "Состояние миссии"
+        }
+    },
+    "missionCont": {
+        "Language": {
+            "tr": "Türkçe",
+            "en": "English",
+            "de": "Deutsch",
+            "fr": "Français",
+            "jp": "日本語",
+            "ru": "Русский"
+        },
+        "yes": {
+            "tr": "Evet",
+            "en": "Yes",
+            "de": "Ja",
+            "fr": "Oui",
+            "jp": "はい",
+            "ru": "Да"
+        },
+        "no": {
+            "tr": "Hayır",
+            "en": "No",
+            "de": "Nein",
+            "fr": "Non",
+            "jp": "いいえ",
+            "ru": "Нет"
+        },
+        "controlMode": {
+            "tr": "Kontrol Modu:",
+            "en": "Control Mode:",
+            "de": "Steuerungsmodus:",
+            "fr": "Mode de contrôle:",
+            "jp": "コントロールモード:",
+            "ru": "Режим управления:"
+        },
+        "manual": {
+            "tr": "Manuel",
+            "en": "Manual",
+            "de": "Manuell",
+            "fr": "Manuel",
+            "jp": "マニュアル",
+            "ru": "Ручной"
+        },
+        "autonomous": {
+            "tr": "Otonom",
+            "en": "Autonomous",
+            "de": "Autonom",
+            "fr": "Autonome",
+            "jp": "オートノミー",
+            "ru": "Автономный"
+        },
+        "intervention": {
+            "tr": "Müdahale",
+            "en": "Intervention",
+            "de": "Eingriff",
+            "fr": "Intervention",
+            "jp": "介入",
+            "ru": "Вмешательство"
+        },
+        "speedLimit": {
+            "tr": "Hız Sınırı:",
+            "en": "Speed Limit:",
+            "de": "Geschwindigkeitsbegrenzung:",
+            "fr": "Limite de vitesse:",
+            "jp": "速度制限:",
+            "ru": "Ограничение скорости:"
+        },
+        "kmh": {
+            "tr": "Km/s",
+            "en": "Km/h",
+            "de": "Km/h",
+            "fr": "Km/h",
+            "jp": "Km/h",
+            "ru": "Km/h"
+        },
+        "notifyEngage": {
+            "tr": "Otonom Sürüşe Hazır",
+            "en": "Ready for autonomous driving",
+            "de": "Bereit für autonome Fahrt",
+            "fr": "Prêt pour la conduite autonome",
+            "jp": "自動運転に備えて",
+            "ru": "Готов к автономному вождению"
+        },
+        "restartPC": {
+            "tr": "Bilgisayarı YENIDEN BAŞLATMAK İstediğinize Emin Misiniz?",
+            "en": "Are you sure you want to RESTART your computer?",
+            "de": "Sind Sie sicher, dass Sie Ihren Computer neu starten möchten?",
+            "fr": "Êtes-vous sûr de vouloir redémarrer votre ordinateur?",
+            "jp": "コンピューターを再起動してもよろしいですか？",
+            "ru": "Вы уверены, что хотите перезагрузить свой компьютер?"
+        },
+        "restartAW": {
+            "tr": "Autoware'i YENİDEN BAŞLATMAK İstediğinize Emin Misiniz?",
+            "en": "Are you sure you want to RESTART Autoware?",
+            "de": "Sind Sie sicher, dass Sie Autoware neu starten möchten?",
+            "fr": "Êtes-vous sûr de vouloir redémarrer Autoware?",
+            "jp": "Autowareを再起動してもよろしいですか？",
+            "ru": "Вы уверены, что хотите перезагрузить Autoware?"
+        },
+        "shutdownPC": {
+            "tr": "Bilgisayarı KAPATMAK İstediğinize Emin Misiniz?",
+            "en": "Are you sure you want to SHUTDOWN your computer?",
+            "de": "Sind Sie sicher, dass Sie Ihren Computer herunterfahren möchten?",
+            "fr": "Êtes-vous sûr de vouloir éteindre votre ordinateur?",
+            "jp": "コンピューターをシャットダウンしてもよろしいですか？",
+            "ru": "Вы уверены, что хотите выключить свой компьютер?"
+        },
+
+        "notifyEmergency": {
+            "tr": "Acil Durum Modu Aktif!",
+            "en": "Emergency Status Active!",
+            "de": "Notfallstatus aktiv!",
+            "fr": "Statut d'urgence actif!",
+            "jp": "緊急状況が発生しました！",
+            "ru": "Активирован экстренный статус!"
+        },
+        "notifyGoalPoint": {
+            "tr": "Önce Hedefi Seçin!",
+            "en": "First select a goal!",
+            "de": "Wählen Sie zuerst ein Ziel aus!",
+            "fr": "Sélectionnez d'abord un objectif!",
+            "jp": "まず目標を選択してください！",
+            "ru": "Сначала выберите цель!"
+        },
+        "notifyWarningAutowareStatus": {
+            "tr": "Autoware Kapatıldı!",
+            "en": "Autoware is off!",
+            "de": "Autoware ist aus!",
+            "fr": "Autoware est éteint!",
+            "jp": "Autowareはオフです！",
+            "ru": "Autoware выключен!"
+        },
+        "notifySuccessAutowareStatus": {
+            "tr": "Autoware Başlatıldı!",
+            "en": "Autoware is on!",
+            "de": "Autoware ist an!",
+            "fr": "Autoware est allumé!",
+            "jp": "Autowareはオンです！",
+            "ru": "Autoware включен!"
+        },
+        "notifyWaitingForGoal": {
+            "tr": "Hedef Girmeniz Bekleniyor",
+            "en": "Waiting for goal selection",
+            "de": "Warten auf die Auswahl des Ziels",
+            "fr": "En attente de la sélection de l'objectif",
+            "jp": "目標の選択を待っています",
+            "ru": "Ожидание выбора цели"
+        },
+        "goalputdesc": {
+            "tr": "Hedef eklemek için haritanın üzerinde istediğiniz noktaya tıklayın",
+            "en": "Tap the map to add a goal",
+            "de": "Tippen Sie auf die Karte, um ein Ziel hinzuzufügen",
+            "fr": "Appuyez sur la carte pour ajouter un objectif",
+            "jp": "目標を追加するには、マップをタップします",
+            "ru": "Нажмите на карту, чтобы добавить цель"
+        },
+        "goalpoint": {
+            "tr": "Hedef Noktası",
+            "en": "Goal Point",
+            "de": "Ziel",
+            "fr": "Point d'objectif",
+            "jp": "目標地点",
+            "ru": "Целевая точка"
+        },
+        "checkpoint": {
+            "tr": "Durak Noktası",
+            "en": "Check Point",
+            "de": "Check Point",
+            "fr": "Point de contrôle",
+            "jp": "チェックポイント",
+            "ru": "Пункт контроля"
+        },
+        "goalremove": {
+            "tr": "Hedefi Temizle",
+            "en": "Clear Goal",
+            "de": "Ziel löschen",
+            "fr": "Effacer l'objectif",
+            "jp": "目標をクリア",
+            "ru": "Очистить цель"
+        },
+        "checkpointremove": {
+            "tr": "Durak Noktasını Sil",
+            "en": "Remove CheckPoint",
+            "de": "CheckPoint entfernen",
+            "fr": "Supprimer le point de contrôle",
+            "jp": "チェックポイントを削除",
+            "ru": "Удалить контрольную точку"
+        },
+        "carControllerStatus": {
+            "tr": "Araç Kontrolu durumu:",
+            "en": "Car Controller Status:",
+            "de": "Status des Fahrzeugsteuergeräts:",
+            "fr": "Statut du contrôleur de voiture:",
+            "jp": "車両コントローラーの状態：",
+            "ru": "Статус контроллера автомобиля:"
+        },
+        "state": {
+            "tr": "Durum: ",
+            "en": "State: ",
+            "de": "Zustand: ",
+            "fr": "Etat: ",
+            "jp": "状態：",
+            "ru": "Состояние: "
+        },
+        "missionState": {
+            "en": "Mission state: ",
+            "tr": "Görev durumu: ",
+            "de": "Mission Zustand: ",
+            "fr": "État de la mission: ",
+            "jp": "ミッションの状態：",
+            "ru": "Состояние миссии: "
+        },
+        "missionActive": {
+            "tr": "Aktif",
+            "en": "Active",
+            "de": "Aktiv",
+            "fr": "Actif",
+            "jp": "アクティブ",
+            "ru": "Активный"
+        },
+        "missionInactive": {
+            "tr": "Aktif Değil",
+            "en": "Inactive",
+            "de": "Inaktiv",
+            "fr": "Inactif",
+            "jp": "非アクティブ",
+            "ru": "Неактивный"
+        },
+        "repeatCycle": {
+            "tr": "Rotayı Tekrarla",
+            "en": "Repeat Cycle",
+            "de": "Zyklus wiederholen",
+            "fr": "Répéter le cycle",
+            "jp": "サイクルを繰り返す",
+            "ru": "Повторить цикл"
+        },
+        "emergencyStatus": {
+            "tr": "Acil Durum",
+            "en": "Emergency Status",
+            "de": "Notfallstatus",
+            "fr": "Statut d'urgence",
+            "jp": "緊急事態",
+            "ru": "Состояние чрезвычайной ситуации"
+        },
+        "clearEmergency": {
+            "tr": "Acil Durumu Temizle",
+            "en": "Clear Emergency",
+            "de": "Notfall löschen",
+            "fr": "Effacer l'urgence",
+            "jp": "緊急事態をクリア",
+            "ru": "Очистить чрезвычайную ситуацию"
+        },
+        "normalStatus": {
+            "tr": "Sistem Operasyonel",
+            "en": "System Operational",
+            "de": "Systembetrieb",
+            "fr": "Système opérationnel",
+            "jp": "システムが稼働しています",
+            "ru": "Система работает"
+        },
+        "buttons": {
+            "refresh": {
+                "en": "Refresh",
+                "tr": "Yeniden Yükleme",
+                "de": "Aktualisieren",
+                "fr": "Rafraîchir",
+                "jp": "リフレッシュ",
+                "ru": "Обновить"
+            },
+            "addGoalpoint": {
+                "en": "Add GoalPoint",
+                "tr": "Hedef ekle",
+                "de": "Ziel hinzufügen",
+                "fr": "Ajouter un point d'objectif",
+                "jp": "目標地点を追加",
+                "ru": "Добавить целевую точку"
+            },
+            "addCheckpoint": {
+                "en": "Add CheckPoint",
+                "tr": "Durak Noktası ekle",
+                "de": "CheckPoint hinzufügen",
+                "fr": "Ajouter un point de contrôle",
+                "jp": "チェックポイントを追加",
+                "ru": "Добавить контрольную точку"
+            },
+            "followCar": {
+                "en": "Follow Car",
+                "tr": "Araca Odakla",
+                "de": "Fahrzeug folgen",
+                "fr": "Suivre la voiture",
+                "jp": "車両をフォロー",
+                "ru": "Следовать за автомобилем"
+            },
+            "awRestart": {
+                "en": "AW Restart",
+                "tr": "AW Yeniden Başlat",
+                "de": "AW Neustart",
+                "fr": "Redémarrage AW",
+                "jp": "AWを再起動",
+                "ru": "Перезапуск AW"
+            },
+            "pcRestart": {
+                "en": "Reboot",
+                "tr": "Yeniden Başlat",
+                "de": "Neustart",
+                "fr": "Redémarrage",
+                "jp": "再起動",
+                "ru": "Перезагрузка"
+            },
+            "pcShutdown": {
+                "en": "Shutdown",
+                "tr": "Kapat",
+                "de": "Herunterfahren",
+                "fr": "Arrêt",
+                "jp": "シャットダウン",
+                "ru": "Выключение"
+            },
+            "start": {
+                "en": "Start",
+                "tr": "Başlat",
+                "de": "Start",
+                "fr": "Démarrer",
+                "jp": "スタート",
+                "ru": "Старт"
+            },
+            "stop": {
+                "en": "Stop",
+                "tr": "Durdur",
+                "de": "Stop",
+                "fr": "Arrêter",
+                "jp": "ストップ",
+                "ru": "Стоп"
+            },
+            "engage": {
+                "en": "Engage",
+                "tr": "Görevi Başlat",
+                "de": "Start",
+                "fr": "Engager",
+                "jp": "開始",
+                "ru": "Запуск"
+            },
+            "disengage": {
+                "en": "Disengage",
+                "tr": "Görevi Durdur",
+                "de": "Stop",
+                "fr": "Désengager",
+                "jp": "停止",
+                "ru": "Остановка"
+            },
+            "gear": {
+                "en": "Gear",
+                "tr": "Vites",
+                "de": "Getriebe",
+                "fr": "Vitesse",
+                "jp": "ギア",
+                "ru": "Передача"
+            },
+            "set Limit": {
+                "en": "Set limit:",
+                "tr": "Sınırı ayarla:",
+                "de": "Grenze setzen:",
+                "fr": "Définir la limite:",
+                "jp": "制限を設定:",
+                "ru": "Установить предел:"
+            },
+            "send": {
+                "en": "Send",
+                "tr": "Gönder",
+                "de": "Senden",
+                "fr": "Envoyer",
+                "jp": "送信",
+                "ru": "Отправить"
+            },
+            "Initializing": {
+                "en": "Initializing",
+                "tr": "Başlatılıyor",
+                "de": "Initialisierung",
+                "fr": "Initialisation",
+                "jp": "初期化中",
+                "ru": "Инициализация"
+            },
+            "WaitingForGoal": {
+                "en": "Waiting for goal",
+                "tr": "Hedef bekleniyor",
+                "de": "Warten auf Ziel",
+                "fr": "En attente de l'objectif",
+                "jp": "目標を待っています",
+                "ru": "Ожидание цели"
+            },
+            "Planning": {
+                "en": "Planning",
+                "tr": "Rota Planlanıyor",
+                "de": "Planung",
+                "fr": "Planification",
+                "jp": "計画中",
+                "ru": "Планирование"
+            },
+            "ReadyForEngage": {
+                "en": "Ready for engage",
+                "tr": "Rota hazır",
+                "de": "Bereit für Start",
+                "fr": "Prêt à engager",
+                "jp": "準備完了",
+                "ru": "Готов к запуску"
+            },
+            "Driving": {
+                "en": "Driving",
+                "tr": "Sürüş",
+                "de": "Fahren",
+                "fr": "Conduite",
+                "jp": "ドライブ",
+                "ru": "Вождение"
+            },
+            "ArrivedGoal": {
+                "en": "Arrived goal",
+                "tr": "Hedefe ulaştı",
+                "de": "Ziel erreicht",
+                "fr": "Objectif atteint",
+                "jp": "目標に到着",
+                "ru": "Цель достигнута"
+            },
+            "Unknown": {
+                "en": "Unknown",
+                "tr": "Bilinmeyen Durum",
+                "de": "Unbekannt",
+                "fr": "Inconnu",
+                "jp": "不明",
+                "ru": "Неизвестно"
+            },
+            "Neutral": {
+                "en": "Neutral",
+                "tr": "Nötr",
+                "de": "Neutral",
+                "fr": "Neutre",
+                "jp": "ニュートラル",
+                "ru": "Нейтральная"
+            },
+            "Reverse": {
+                "en": "Reverse",
+                "tr": "Geri",
+                "de": "Rückwärts",
+                "fr": "Marche arrière",
+                "jp": "リバース",
+                "ru": "Реверс"
+            },
+            "Drive": {
+                "en": "Drive",
+                "tr": "İleri",
+                "de": "Vorwärts",
+                "fr": "Marche avant",
+                "jp": "ドライブ",
+                "ru": "Прямой"
+            },
+            "Low": {
+                "en": "Low",
+                "tr": "Düşük",
+                "de": "Niedrig",
+                "fr": "Faible",
+                "jp": "ロー",
+                "ru": "Низкая"
+            },
+            "Parking": {
+                "en": "Parking",
+                "tr": "Park",
+                "de": "Parken",
+                "fr": "Stationnement",
+                "jp": "パーキング",
+                "ru": "Парковка"
+            }
+        }
+    }
+}
