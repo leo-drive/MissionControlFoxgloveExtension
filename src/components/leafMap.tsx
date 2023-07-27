@@ -1,3 +1,4 @@
+import { PanelExtensionContext } from "@foxglove/studio";
 import {
   checkpointAtom,
   followMarkerAtom,
@@ -15,7 +16,7 @@ import { useAtom, useAtomValue } from "jotai";
 import { DivIcon, divIcon, Map } from "leaflet";
 import { useEffect, useRef, useState } from "react";
 import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvent } from "react-leaflet";
-function MapMain() {
+function MapMain({ context }: { context: PanelExtensionContext }) {
   const vehiclePosition = useAtomValue(awapiVehicleStatusAtom).geo_point;
   const eulAng = useAtomValue(awapiVehicleStatusAtom).eulerangle.yaw;
   const [recVehicleLocation, _setRecVehicleLocation] = useAtom(vehicleLocationAtom);
@@ -58,6 +59,7 @@ function MapMain() {
         const goal = [lat, lng, 48.35];
         if (goalpointButton) {
           // console.log("gp", goal);
+          context.publish?.("/gps_coordinates", { data: JSON.stringify(goal) });
           setPose([lat, lng, 48.35]);
           setGoalpointButton(false);
           setCheckpointButton(false);

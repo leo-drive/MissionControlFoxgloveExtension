@@ -21,16 +21,14 @@ import {
   restartPCAtom,
   restartAWAtom,
   shutdownPCAtom,
-  engageStateAtom,
-  publishEmergencyServiceAtom,
 } from "../jotai/atoms";
-// import { Publisher, RosConnection, useRos } from "rosreact";
 import { motion, AnimatePresence } from "framer-motion";
 import Lang from "../languages/a.json";
 import { useAtom } from "jotai";
 import { toast } from "react-hot-toast";
+import { PanelExtensionContext } from "@foxglove/studio";
 
-const MissionControl = () => {
+const MissionControl = ({ context }: { context: PanelExtensionContext }) => {
   const [recInputFields, setRecInputFields] = useAtom(inputFieldsAtom);
   const [recEngage, _setRecEngage] = useAtom(engageReceivedAtom);
   const [awapiAWStatus, _setAwapiAWStatus] = useAtom(awapiAWStatusAtom);
@@ -42,9 +40,6 @@ const MissionControl = () => {
 
   const removeRef = useRef<HTMLDivElement>(null);
   const removeRefCP = useRef<HTMLDivElement>(null);
-
-  const [_engageState, setEngageState] = useAtom(engageStateAtom);
-  const [_serviceCallEmergency, setServiceCallEmergency] = useAtom(publishEmergencyServiceAtom);
 
   const [_processValue, setProcessValue] = useAtom(processAtom);
   const [_processButton, setProcessButton] = useAtom(publishProcessAtom);
@@ -195,6 +190,25 @@ const MissionControl = () => {
       setUnchangedCheckpoints(recInputFields);
     }
   });
+
+  const callService = useCallback(
+    async (serviceName: string, request: any) => {
+      if (!context.callService) {
+        return;
+      }
+
+      try {
+        const response = await context.callService(serviceName, request);
+        console.log(`Service ${serviceName} response:`, response);
+        return response;
+      } catch (error) {
+        console.error(error);
+        return null;
+      }
+    },
+    [context.callService],
+  );
+
   return (
     <div className="flex h-full bg-[#222831]">
       <div
@@ -633,11 +647,8 @@ l-1037 -1037 -398 397 c-272 271 -411 403 -442 419 -68 34 -177 38 -255 8 -51
 
           {vehicleStateInfo() === Lang.missionCont.buttons.Driving[locale] ? (
             <button
-              onClick={() => {
-                setEngageState(true);
-                setTimeout(() => {
-                  setEngageState(false);
-                }, 500);
+              onClick={async () => {
+                await callService("/api/autoware/set/engage", { engage: false });
               }}
               // disabled={vehicleStateInfo() !== "Driving"}
               className={`h-14 w-full px-4 py-2 text-sm font-semibold  leading-5 transition-colors duration-200
@@ -648,11 +659,8 @@ l-1037 -1037 -398 397 c-272 271 -411 403 -442 419 -68 34 -177 38 -255 8 -51
             </button>
           ) : (
             <button
-              onClick={() => {
-                setEngageState(true);
-                setTimeout(() => {
-                  setEngageState(false);
-                }, 500);
+              onClick={async () => {
+                await callService("/api/autoware/set/engage", { engage: true });
               }}
               disabled={vehicleStateInfo() !== Lang.missionCont.buttons.ReadyForEngage[locale]}
               className={`XlRounded h-14 w-full transform px-4 py-2 
@@ -716,11 +724,10 @@ l-1037 -1037 -398 397 c-272 271 -411 403 -442 419 -68 34 -177 38 -255 8 -51
             ></div>
 
             <button
-              onClick={() => {
-                setServiceCallEmergency(true);
-                setTimeout(() => {
-                  setServiceCallEmergency(false);
-                }, 200);
+              onClick={async () => {
+                await callService("/api/autoware/set/emergency", {
+                  emergency: false,
+                });
               }}
               disabled={!emergencyHoldingStatus && !emegencyHazardStatus && !recEmergency}
               className={`XlRounded h-14 w-full transform px-4 py-2  text-sm font-semibold leading-5
@@ -734,7 +741,7 @@ l-1037 -1037 -398 397 c-272 271 -411 403 -442 419 -68 34 -177 38 -255 8 -51
       </div>
 
       <div id="right" className="relative h-full w-3/5 overflow-hidden">
-        <MapMain />
+        <MapMain context={context} />
       </div>
     </div>
   );

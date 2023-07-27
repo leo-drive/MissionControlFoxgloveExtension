@@ -63,6 +63,9 @@ function ExamplePanel({ context }: { context: PanelExtensionContext }): JSX.Elem
       { topic: "/system/emergency/hazard_status" },
       { topic: "/awapi/autoware/get/status" },
     ]);
+
+    // To publish messages, you must advertise the topic first.
+    context.advertise?.("/gps_coordinates", "std_msgs/msg/String");
   }, [context]);
 
   const setVehicleState = useSetAtom(VehicleStateState);
@@ -105,34 +108,9 @@ function ExamplePanel({ context }: { context: PanelExtensionContext }): JSX.Elem
     renderDone?.();
   }, [renderDone]);
 
-  // const [atomMessages, setAtomMessages] = useAtom(messagesAtom);
-
-  // useEffect(() => {
-  //   const mappedTopics = messages?.map((message) => message.topic);
-  //   const mappedAtomMessages = atomMessages?.map((message) => message.topic);
-  //   if (!messages) return;
-  //   if (atomMessages?.length === 0 && messages) {
-  //     setAtomMessages(Array.from(messages));
-  //   } else if (atomMessages && atomMessages.length > 0) {
-  //     // check if the messages topic is already in the atomMessages
-  //     if (mappedAtomMessages?.includes(mappedTopics?.[0] as string)) {
-  //       // if it is, then we need to update the atomMessages
-  //       const index = mappedAtomMessages?.indexOf(mappedTopics?.[0] as string);
-  //       if (index !== undefined && messages && messages[0]) {
-  //         const newAtomMessages = Array.from(atomMessages);
-  //         newAtomMessages[index] = messages[0];
-  //         setAtomMessages(newAtomMessages);
-  //       }
-  //     } else {
-  //       // if it isn't, then we need to add it to the atomMessages
-  //       setAtomMessages([...atomMessages, ...(messages as MessageEvent[])]);
-  //     }
-  //   }
-  // }, [messages]);
-
   return (
     <div className="min-h-screen w-full">
-      <MissionControl />
+      <MissionControl context={context} />
     </div>
   );
 }
