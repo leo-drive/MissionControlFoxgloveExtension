@@ -11,6 +11,7 @@ import {
   engageReceivedAtom,
   // messagesAtom,
   vehicleHazardStatusAtom,
+  vehicleLocationAtom,
 } from "./jotai/atoms";
 
 function ExamplePanel({ context }: { context: PanelExtensionContext }): JSX.Element {
@@ -62,6 +63,7 @@ function ExamplePanel({ context }: { context: PanelExtensionContext }): JSX.Elem
       { topic: "/api/autoware/get/engage" },
       { topic: "/system/emergency/hazard_status" },
       { topic: "/awapi/autoware/get/status" },
+      { topic: "/awapi/vehicle/get/status" },
     ]);
 
     // To publish messages, you must advertise the topic first.
@@ -73,6 +75,7 @@ function ExamplePanel({ context }: { context: PanelExtensionContext }): JSX.Elem
   const setEngageReceived = useSetAtom(engageReceivedAtom);
   const setHazardStatus = useSetAtom(vehicleHazardStatusAtom);
   const setAwapiAWStatus = useSetAtom(awapiAWStatusAtom);
+  const setVehicleLocation = useSetAtom(vehicleLocationAtom);
 
   useEffect(() => {
     if (!messages) return;
@@ -97,6 +100,14 @@ function ExamplePanel({ context }: { context: PanelExtensionContext }): JSX.Elem
         case "/awapi/autoware/get/status":
           // @ts-ignore
           setAwapiAWStatus(messages[0].message);
+          break;
+        case "/awapi/vehicle/get/status":
+          setVehicleLocation({
+            // @ts-ignore
+            longitude: messages[0].message.geo_point.longitude,
+            // @ts-ignore
+            latitude: messages[0].message.geo_point.latitude,
+          });
           break;
         default:
           break;

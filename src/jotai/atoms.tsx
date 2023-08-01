@@ -221,8 +221,8 @@ export const autowareProcessDiagAtom = atom(2);
 export const followMarkerAtom = atom(false);
 
 export const vehicleLocationAtom = atom({
-  latitude: 9999,
-  longitude: 9999,
+  latitude: 0,
+  longitude: 0,
 });
 
 export const publishGoalPointButtonLeftAtom = atom(false);

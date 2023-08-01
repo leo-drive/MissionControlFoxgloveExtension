@@ -36,11 +36,12 @@ function MapMain({ context }: { context: PanelExtensionContext }) {
   // This code will allow the map to pan to the vehicle's position
   // and follow the marker with the correct angle
 
-  const [followMarker, _setFollowMarker] = useAtom(followMarkerAtom);
+  const [followMarker, setFollowMarker] = useAtom(followMarkerAtom);
   const MarkerLocationFollow = () => {
     useEffect(() => {
       if (followMarker && mapRef.current) {
         mapRef.current.panTo([recVehicleLocation.latitude, recVehicleLocation.longitude]);
+        mapRef.current.dragging.disable();
       }
       setMarkerAngle(`${eulAng * -57.2957795 + 95}deg`);
     }, []);
@@ -153,7 +154,7 @@ function MapMain({ context }: { context: PanelExtensionContext }) {
       </div>
       <div
         onClick={() => {
-          if (pose[0] !== 0) _setFollowMarker(!followMarker);
+          if (pose[0] !== 0) setFollowMarker(!followMarker);
         }}
         className={`absolute bottom-4 left-2 h-14 w-14 rounded-full ${
           followMarker ? "bg-[#e63946]" : "bg-[#00ADB5]"
@@ -193,12 +194,12 @@ function MapMain({ context }: { context: PanelExtensionContext }) {
         zoomControl={false}
       >
         {/* {osm ? (
-          <TileLayer
-            url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
-            minZoom={16}
-          />
         ) : ( */}
-        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" minZoom={16} />
+        <TileLayer
+          url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+          minZoom={16}
+        />
+        {/* <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" minZoom={16} /> */}
         {/* )} */}
 
         <Marker
@@ -242,17 +243,19 @@ function MapMain({ context }: { context: PanelExtensionContext }) {
         </Marker>
         <MarkerLocationFollow />
         <MouseLocationInfo />
-        <Marker
-          position={[pose[0] ?? 0, pose[1] ?? 0]}
-          icon={
-            new DivIcon({
-              className: "bg-transparent",
-              html: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="#e63946" d="M12 2C8.13 2 5 5.13 5 9c0 4.17 4.42 9.92 6.24 12.11.4.48 1.13.48 1.53 0C14.58 18.92 19 13.17 19 9c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" className="color000000 svgShape" style="stroke: rgb(0,0,0); stroke-width:1.5px;"/></svg>`,
-              iconSize: [48, 48],
-              iconAnchor: [24, 48],
-            })
-          }
-        />
+        {pose[0] !== 0 ? (
+          <Marker
+            position={[pose[0]!, pose[1]!]}
+            icon={
+              new DivIcon({
+                className: "bg-transparent",
+                html: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="#e63946" d="M12 2C8.13 2 5 5.13 5 9c0 4.17 4.42 9.92 6.24 12.11.4.48 1.13.48 1.53 0C14.58 18.92 19 13.17 19 9c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" className="color000000 svgShape" style="stroke: rgb(0,0,0); stroke-width:1.5px;"/></svg>`,
+                iconSize: [48, 48],
+                iconAnchor: [24, 48],
+              })
+            }
+          />
+        ) : null}
         {recVehicleLocation.latitude !== 9999 && (
           <Marker
             position={[
