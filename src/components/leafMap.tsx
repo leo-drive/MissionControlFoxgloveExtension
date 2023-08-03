@@ -16,6 +16,68 @@ import { useAtom, useAtomValue } from "jotai";
 import { DivIcon, divIcon, Map } from "leaflet";
 import { useEffect, useRef, useState } from "react";
 import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvent } from "react-leaflet";
+
+function degToRad(deg: number) {
+  return deg * (Math.PI / 180);
+}
+
+function getUTMZoneLetter(lat: number) {
+  if (-80 <= lat && lat <= 84) {
+    var letters = "CDEFGHJKLMNPQRSTUVWX";
+    return letters.charAt(Math.floor((lat + 80) / 8));
+  } else {
+    // Outside the UTM limits
+    return null;
+  }
+}
+
+export function latLongToUTM(
+  lat: number,
+  long: number,
+): { x: number; y: number; zone: number; zoneLetter: string } {
+  var zone = Math.floor((long + 180) / 6) + 1;
+  var a = 6378137; // radius of earth
+  var f = 1 / 298.257223563; // flattening
+  var e = Math.sqrt(2 * f - Math.pow(f, 2)); // eccentricity
+  var eSq = Math.pow(e, 2);
+  var latRad = degToRad(lat);
+  var longRad = degToRad(long);
+  var k0 = 0.9996; // scale factor
+  var falseEasting = 500000; // in meters
+
+  var N = a / Math.sqrt(1 - eSq * Math.sin(latRad) * Math.sin(latRad));
+  var T = Math.pow(Math.tan(latRad), 2);
+  var C = (eSq / (1 - eSq)) * Math.pow(Math.cos(latRad), 2);
+  var A = Math.cos(latRad) * (longRad - degToRad((zone - 1) * 6 - 180 + 3));
+  var M =
+    a *
+    ((1 - eSq / 4 - (3 * Math.pow(eSq, 2)) / 64 - (5 * Math.pow(eSq, 3)) / 256) * latRad -
+      ((3 * eSq) / 8 + (3 * Math.pow(eSq, 2)) / 32 + (45 * Math.pow(eSq, 3)) / 1024) *
+        Math.sin(2 * latRad) +
+      ((15 * Math.pow(eSq, 2)) / 256 + (45 * Math.pow(eSq, 3)) / 1024) * Math.sin(4 * latRad) -
+      ((35 * Math.pow(eSq, 3)) / 3072) * Math.sin(6 * latRad));
+
+  var x =
+    k0 *
+      N *
+      (A +
+        ((1 - T + C) * Math.pow(A, 3)) / 6 +
+        ((5 - 18 * T + Math.pow(T, 2) + 72 * C - 58 * eSq) * Math.pow(A, 5)) / 120) +
+    falseEasting;
+  var y =
+    k0 *
+    (M +
+      N *
+        Math.tan(latRad) *
+        (Math.pow(A, 2) / 2 +
+          ((5 - T + 9 * C + 4 * Math.pow(C, 2)) * Math.pow(A, 4)) / 24 +
+          ((61 - 58 * T + Math.pow(T, 2) + 600 * C - 330 * eSq) * Math.pow(A, 6)) / 720));
+
+  var zoneLetter = getUTMZoneLetter(lat);
+
+  return { x: x, y: y, zone: zone, zoneLetter: zoneLetter ?? "" };
+}
+
 function MapMain({ context }: { context: PanelExtensionContext }) {
   const vehiclePosition = useAtomValue(awapiVehicleStatusAtom).geo_point;
   const eulAng = useAtomValue(awapiVehicleStatusAtom).eulerangle.yaw;
