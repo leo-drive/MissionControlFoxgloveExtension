@@ -737,8 +737,8 @@ l-1037 -1037 -398 397 c-272 271 -411 403 -442 419 -68 34 -177 38 -255 8 -51
             </button>
           </div>
         )}
-        <BurgerMenu />
       </div>
+      <BurgerMenu />
 
       <div id="right" className="relative h-full w-3/5 overflow-hidden">
         <MapMain context={context} />

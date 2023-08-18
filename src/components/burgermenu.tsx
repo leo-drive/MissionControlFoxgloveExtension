@@ -20,7 +20,7 @@ const BurgerMenu = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="absolute bottom-4 left-8 flex h-[17.5rem] w-52 cursor-pointer flex-col items-start justify-between rounded-3xl border-[5px] border-[#000]/25 bg-[#1D767E] text-lg"
+            className="absolute bottom-6 left-8 flex h-[17.5rem] w-52 cursor-pointer flex-col items-start justify-between rounded-3xl border-[5px] border-[#000]/25 bg-[#1D767E] text-lg"
           >
             <div
               onClick={() => {
@@ -193,7 +193,7 @@ const BurgerMenu = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="absolute bottom-4 left-8 flex h-14 w-14 cursor-pointer flex-col items-center justify-between rounded-full border-[5px] border-[#222831] bg-[#1D767E] text-lg"
+            className="absolute bottom-6 left-8 flex h-14 w-14 cursor-pointer flex-col items-center justify-between rounded-full border-[5px] border-[#222831] bg-[#1D767E] text-lg"
           >
             <button
               className="relative h-12 w-12 rounded-full bg-[#00ADB5] p-2 text-black focus:outline-none"
