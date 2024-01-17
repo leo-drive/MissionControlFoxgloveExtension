@@ -9,7 +9,6 @@ import {
   awapiAWStatusAtom,
   emergencyStateAtom,
   engageReceivedAtom,
-  // messagesAtom,
   vehicleHazardStatusAtom,
   vehicleLocationAtom,
 } from "./jotai/atoms";
