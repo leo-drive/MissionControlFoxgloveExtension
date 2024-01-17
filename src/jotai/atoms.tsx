@@ -238,3 +238,4 @@ export const shutdownPCAtom = atom(false);
 export const publishEmergencyServiceAtom = atom(false);
 
 export const velocityLimitValueAtom = atom(30);
+export const destinationAtom = atom(false);
