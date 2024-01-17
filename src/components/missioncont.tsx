@@ -154,7 +154,7 @@ const MissionControl = ({ context }: { context: PanelExtensionContext }) => {
   const [selectDestination, setSelectDestination] = useAtom(destinationAtom);
 
   return (
-    <div className="flex h-[calc(100vh_-_10rem)] bg-[#fff]">
+    <div className="flex h-[calc(100vh_-_5rem)] bg-[#fff]">
       {!selectDestination ? (
         <div
           id="left"
