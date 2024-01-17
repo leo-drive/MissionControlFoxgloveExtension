@@ -201,7 +201,7 @@ const OldMissionControl = ({ context }: { context: PanelExtensionContext }) => {
   return (
     <div
       id="left"
-      className="font-prompt no-scrollbar relative z-0 flex h-full w-[30%] flex-col items-center gap-y-6 overflow-auto pt-12 pb-32"
+      className="font-prompt no-scrollbar relative z-50 flex h-full w-[30%] flex-col items-center gap-y-6 overflow-auto pt-12 pb-32"
     >
       <AnimatePresence>
         {restart && (

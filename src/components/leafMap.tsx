@@ -158,7 +158,7 @@ function MapMain({ context }: { context: PanelExtensionContext }) {
   };
 
   return (
-    <div className="relative h-[calc(100vh_-_10rem)] w-full">
+    <div className="relative h-[calc(100vh_-_5rem)] w-full">
       <div
         onClick={() => {
           if (pose[0] !== 0) setFollowMarker(!followMarker);
